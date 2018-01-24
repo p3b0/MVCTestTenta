@@ -11,9 +11,9 @@ namespace MVCTestTenta.Data
     {
         public static void Seed(ApplicationDbContext context, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
         {
-            var CocaCola = new Product { Name = "CocaCola", UnitPrice = 6, ReleaseDate = DateTime.ParseExact("2018-12-01", "yyyy-mm-dd", null) };
-            var Chips = new Product { Name = "Chips", UnitPrice = 20, ReleaseDate = DateTime.ParseExact("2018-12-01", "yyyy-mm-dd", null) };
-            var IceCream = new Product { Name = "IceCream", UnitPrice = 12, ReleaseDate = DateTime.ParseExact("2018-12-01", "yyyy-mm-dd", null) };
+            var CocaCola = new Product { Name = "Coc@Cola", UnitPrice = 6, ReleaseDate = DateTime.ParseExact("2018-12-01", "yyyy-mm-dd", null) };
+            var Chips = new Product { Name = "Ch1ps", UnitPrice = 20, ReleaseDate = DateTime.ParseExact("2018-12-01", "yyyy-mm-dd", null) };
+            var IceCream = new Product { Name = "IceCr3am", UnitPrice = 12, ReleaseDate = DateTime.ParseExact("2018-12-01", "yyyy-mm-dd", null) };
             context.Product.Add(CocaCola);
             context.Product.Add(Chips);
             context.Product.Add(IceCream);
