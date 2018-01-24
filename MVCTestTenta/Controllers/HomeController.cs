@@ -4,12 +4,22 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using MVCTestTenta.Interfaces;
 using MVCTestTenta.Models;
 
 namespace MVCTestTenta.Controllers
 {
     public class HomeController : Controller
     {
+
+        private ITimeProvider _timeProvider;
+
+        public HomeController(ITimeProvider timeProvider)
+        {
+            _timeProvider = timeProvider;
+        }
+    
+
         public IActionResult Index()
         {
             return View();
