@@ -20,6 +20,9 @@ namespace MVCTestTenta.Data
             var admin = new IdentityRole { Name = "admin" };
             var role = roleManager.CreateAsync(admin).Result;
             userManager.AddToRoleAsync(user, "admin");
+
+            user = new ApplicationUser { UserName = "student@inter.net" };
+            result = userManager.CreateAsync(user, "Abc123!").Result;
         }
     }
 }
