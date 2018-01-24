@@ -40,7 +40,7 @@ namespace MVCTestTenta
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ApplicationDbContext context)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ApplicationDbContext context, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             if (env.IsDevelopment())
             {
@@ -64,7 +64,7 @@ namespace MVCTestTenta
                     template: "{controller=Products}/{action=Index}/{id?}");
             });
 
-            DbSeed.Seed(context);
+            DbSeed.Seed(context, userManager,roleManager);
         }
     }
 }
