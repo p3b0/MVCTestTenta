@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using MVCTestTenta.Data;
 using MVCTestTenta.Models;
 
@@ -14,10 +15,12 @@ namespace MVCTestTenta.Controllers
     public class ProductsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly ILogger<ProductsController> _logger;
 
-        public ProductsController(ApplicationDbContext context)
+        public ProductsController(ApplicationDbContext context, ILogger<ProductsController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         // GET: Products
@@ -47,6 +50,7 @@ namespace MVCTestTenta.Controllers
         // GET: Products/Create
         public IActionResult Create()
         {
+            _logger.LogInformation("Product created!");
             return View();
         }
 
